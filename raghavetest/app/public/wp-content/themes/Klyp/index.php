@@ -18,7 +18,7 @@
 <body>
     <div class="container">
         <h2 class="text-center mt-3 mb-3"><a href="/">Movie Search</a></h2>
-        <form action="index.php" method="get">
+        <form action="index.php" method="get" onsubmit="return false">
             <input type="hidden" name="action" value="search">
             <div class="row">
                 <div class="col-10">
