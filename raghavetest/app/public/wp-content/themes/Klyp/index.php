@@ -52,7 +52,7 @@
         </table>
     </div>
     <script>
-        function changeColor() {
+        window.load = function changeColor() {
             var color = document.getElementById('search').value;
             var colorToChange = color.split(',')[0];
             document.body.style.backgroundColor=colorToChange;
