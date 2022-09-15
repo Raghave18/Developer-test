@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en-AU">
 <head>
     <?php
@@ -22,10 +22,10 @@
             <input type="hidden" name="action" value="search">
             <div class="row">
                 <div class="col-10">
-                    <input type="text" class="form-control" placeholder="Movie Name" name="keyword" id="color" value="<?php echo $_GET['keyword']?>">
+                    <input type="text" class="form-control" placeholder="Movie Name" name="keyword" id="search" value="<?php echo $_GET['keyword']?>">
                 </div>
                 <div class="col-2">
-                    <input type="submit" class="btn btn-info" value="Search">
+                    <input type="submit" class="btn btn-info" value="Search" onclick="changeColor()">
                 </div>
             </div>
         </form>
@@ -42,7 +42,7 @@
           </thead>
           <tbody>
             <tr>
-                <td><?php echo ($movie_data['Title']) ?></td>
+                <td id="text"><?php echo ($movie_data['Title']) ?></td>
                 <td><?php echo ($movie_data['Year']) ?></td>
                 <td><?php echo ($movie_data['Genre']) ?></td>
                 <td><?php echo ($movie_data['Runtime']) ?></td>
@@ -51,5 +51,12 @@
           </tbody>
         </table>
     </div>
+    <script>
+        function changeColor() {
+            var color = document.getElementById('search').value;
+            var colorToChange = color.split(',')[0];
+            document.body.style.backgroundColor=colorToChange;
+        }
+    </script>
 </body>
 </html>
